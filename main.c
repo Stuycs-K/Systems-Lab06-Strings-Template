@@ -13,6 +13,7 @@ void reset(char* s, int size){
 int main() {
 
   char s1[100];
+  s1[0]=0;
   char s2[100] = "hello";
   char s3[100] = "goodbye";
 
@@ -20,7 +21,11 @@ int main() {
   printf("s1: [%s]\n", s1);
   printf("s2: [%s]\n", s2);
   printf("s3: [%s]\n", s3);
-
+  
+  printf("\nTesting strlen(s1):\n");
+  printf("[standard]:\t%lu\n", strlen(s1) );
+  printf("[mine]:\t\t%d\n", mystrlen(s1) );
+  
   printf("\nTesting strlen(s2):\n");
   printf("[standard]:\t%lu\n", strlen(s2) );
   printf("[mine]:\t\t%d\n", mystrlen(s2) );
@@ -71,6 +76,9 @@ int main() {
   printf("[mine]:\t\t[%p]\n", mystrchr(s1, 'z') );
 
   printf("\nTesting strcmp\n");
+  printf("\tComparting cat to dog:\n");
+  printf("\t\t[standard]:\t[%d]\n", strcmp("cat", "dog") );
+  printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("cat", "dog") );
   printf("\tComparting ab to abc:\n");
   printf("\t\t[standard]:\t[%d]\n", strcmp("ab", "abc") );
   printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("ab", "abc") );
